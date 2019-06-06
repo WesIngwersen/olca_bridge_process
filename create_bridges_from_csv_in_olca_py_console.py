@@ -21,12 +21,12 @@ def callbackOutput(rs):
 #Function to get the input flow
 #Modify it depending on the defined criteria (e.g. name, location, category, provider, etc.)
 def find_flowInput(name):
-    processFlows['Input'] = olca.querySql("SELECT tbl_flows.id FROM tbl_flows WHERE tbl_flows.name = '" + name + "'",callbackInput)
+    olca.querySql("SELECT tbl_flows.id FROM tbl_flows WHERE tbl_flows.name = '" + name + "'", callbackInput)
 
 #Function to get the output flow. If several criteria apart from the name need to be fulfilled (e.g. location) a SQL query is run.
 #Modify it depending on the defined criteria (e.g. name, location, category, provider, etc.)
 def find_flowOutput(name):
-    processFlows['Output'] = olca.querySql("SELECT tbl_flows.id FROM tbl_flows WHERE tbl_flows.name = '" + name + "'",callbackOutput)
+    olca.querySql("SELECT tbl_flows.id FROM tbl_flows WHERE tbl_flows.name = '" + name + "'", callbackOutput)
 
 #Function to create a new actor if any match for the name in the csv is found in the database
 def create_actor(name):
